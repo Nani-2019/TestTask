@@ -42,12 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CharType.cs" />
-    <Compile Include="IReadOnlyStream.cs" />
-    <Compile Include="LetterStats.cs" />
+    <Compile Include="File\FileForStatistics.cs" />
+    <Compile Include="File\FileLanguage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReadOnlyStream.cs" />
+    <Compile Include="Statistics\LetterForLanguage.cs" />
+    <Compile Include="Statistics\Letters.cs" />
+    <Compile Include="Statistics\LettersComparer.cs" />
+    <Compile Include="Statistics\OperationStatistics.cs" />
+    <Compile Include="Statistics\Statistics.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
