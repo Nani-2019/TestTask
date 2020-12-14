@@ -52,5 +52,9 @@
     <Compile Include="Statistics\OperationStatistics.cs" />
     <Compile Include="Statistics\Statistics.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="Readme.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

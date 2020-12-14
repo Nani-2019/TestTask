@@ -14,8 +14,8 @@ namespace TestTask
         /// </summary>
         /// <param name="args">Первый параметр - путь до первого файла.
         /// Второй параметр - путь до второго файла.</param>
-        //static void Main(string[] args)
-        //{
+        static void Main(string[] args)
+        {
         //    IReadOnlyStream inputStream1 = GetInputStream(args[0]);
         //    IReadOnlyStream inputStream2 = GetInputStream(args[1]);
 
@@ -29,7 +29,7 @@ namespace TestTask
         //    PrintStatistic(doubleLetterStats);
 
         //    // TODO : Необжодимо дождаться нажатия клавиши, прежде чем завершать выполнение программы.
-        //}
+        }
 
         ///// <summary>
         ///// Ф-ция возвращает экземпляр потока с уже загруженным файлом для последующего посимвольного чтения.
