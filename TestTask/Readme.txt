@@ -6,4 +6,5 @@
 5. Языки надо положить по адресу  где лежит .exe (Directory.GetCurrentDirectory()) +"\\Language") плюс создать папку Language и туда положить.
 Пример как выглядит файл лежит в проекте View папка "Language" там 2 файла;
 6. Проверть путь с файлом для тестов(сам тестовый файл называется XZ.txt и находится в проекте Test в папке TestFile.
-7. Я по этой вакансии https://novosibirsk.hh.ru/vacancy/39378145
+7. NuGet пакеты восстановить.
+8. Я по этой вакансии https://novosibirsk.hh.ru/vacancy/39378145

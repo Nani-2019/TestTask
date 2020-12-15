@@ -24,5 +24,43 @@ namespace View
         {
             InitializeComponent();
         }
+
+        private void Grid_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                DragMove();
+            }
+        }
+
+        private void ListViewMenu_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            int index = ListViewMenu.SelectedIndex;
+            MoveCuursorMenu(index);
+
+            switch (index)
+            {
+                case 0:
+                    GridPrincipial.Children.Clear();
+                    GridPrincipial.Children.Add(new SettingsWindow());
+                    break;
+                case 1:
+                    GridPrincipial.Children.Clear();
+                    GridPrincipial.Children.Add(new StatisticsSensitiveWindows());
+                    break;
+                case 2:
+                    GridPrincipial.Children.Clear();
+                    GridPrincipial.Children.Add(new StatisticsNoSensitiveWindow());
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void MoveCuursorMenu(int index)
+        {
+            TransitionContentSlide.OnApplyTemplate();
+            GridCursor.Margin = new Thickness(0, 70 * index, 0, 0);
+        }
     }
 }

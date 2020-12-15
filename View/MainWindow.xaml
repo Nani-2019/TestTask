@@ -3,10 +3,37 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="1000">
     <Grid>
-        
+        <Grid MouseDown="Grid_MouseDown">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Margin="0,0,0,0" Orientation="Horizontal">
+                    <Grid Height="210"  Width="180" HorizontalAlignment="Left" Background="#dad4da">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="65*"/>
+                        </Grid.ColumnDefinitions>
+                        <materialDesign:TransitioningContent x:Name="TransitionContentSlide" Margin="0,0,10,0" Grid.ColumnSpan="2">
+                            <Grid x:Name="GridCursor" Margin="0 00 0 0" Width="10" HorizontalAlignment="Left" Height="70" Background="Red" VerticalAlignment="Top"/>
+                        </materialDesign:TransitioningContent>
+                        <ListView x:Name="ListViewMenu"  SelectionChanged="ListViewMenu_SelectionChanged" HorizontalAlignment="Left" Width="175" Height="230" Margin="10,0,0,-20" Grid.ColumnSpan="2">
+                            <ListViewItem Margin="0 0 0 0" Height="70" Width="170" Background="Gray">
+                                <TextBlock Text="Настройки" FontSize="20" TextWrapping="Wrap" Height="50" Width="120"/>
+                            </ListViewItem>
+                            <ListViewItem Margin="0 0 0 0" Height="70" Width="170" Background="Gray">
+                                <TextBlock Text="Получение статистики(Регистрозависимо)" FontSize="20" TextWrapping="Wrap" Height="50" Width="120"/>
+                            </ListViewItem>
+                            <ListViewItem Margin="0 0 0 0" Height="70" Width="170" Background="Gray">
+                                <TextBlock Text="Получение статистики(Не регистрозависимо)" FontSize="20" TextWrapping="Wrap" Height="50" Width="120"/>
+                            </ListViewItem>
+                        </ListView>
+                    </Grid>
+                    <Grid x:Name="GridPrincipial" HorizontalAlignment="Right" Background="#dad4da" Margin="0 0 0 0" Width="810" Height="570"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>

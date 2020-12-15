@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="View.StatisticsNoSensitiveWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:View"
+             mc:Ignorable="d" 
+             d:DesignHeight="570" d:DesignWidth="810">
+    <Grid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" Height="380" Margin="0,0,-0.4,0">
+                <StackPanel Width="610" Margin="0,2,0,0">
+                    <Label Margin="0,0,0.6,0">Первый файл кол-во вхождений каждой буквы (Не регистрозависимо)</Label>
+                    <ListBox  ItemsSource="{Binding Path=StatisticsView}" 
+                              Height="354" Width="610" Margin="0,0,-0.4,0">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Border Margin="5" BorderThickness="1" BorderBrush="SteelBlue" CornerRadius="4" Width="370">
+                                    <Grid Margin="3">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding Path=Letter}" Height="20" Width="101"/>
+                                            <TextBlock Text=":" Height="20" Width="101"></TextBlock>
+                                            <TextBlock Text="{Binding Path=Count}" Height="20" Width="101"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 10 0 10">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                        <RadioButton GroupName="Languages" Content="Гласные" IsChecked="{Binding Path=IsVowel}"/>
+                        <RadioButton GroupName="Languages" Content="Согласные" IsChecked="{Binding Path=IsConsonants}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                        <Button Command="{Binding DeleteStatistics}" Width="595" Height="45" 
+                        IsEnabled="{Binding Path=IsDelete}" Margin="10 0 0 0" >
+                            <TextBlock Text="Удалить статистику" TextWrapping="Wrap" TextAlignment="Center"/>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                <ProgressBar Minimum="0" Maximum="100" Margin="10 0 0 0"
+                             IsIndeterminate="{Binding Path=IsProgressStatistics}"
+                             Width="596" Height="30" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                <Button Command="{Binding CalculationStatistics}" Width="595" Height="45"
+                        IsEnabled="{Binding Path=IsCalculationStatistics}" Margin="10 0 0 0" >
+                    <TextBlock Text="Получить статистику регистрозависимую" TextWrapping="Wrap" TextAlignment="Center"/>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>
